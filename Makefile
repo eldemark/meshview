@@ -1,5 +1,5 @@
 # Tested on AlmaLinux 9.2, clang version 15.0.7
-# subdirectories/dependencies:
+# Add these subdirectories and files:
 # glad (https://glad.dav1d.de)
 #   glad.c (renamed to glad.cpp)
 #   glad.h
