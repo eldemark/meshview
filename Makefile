@@ -10,17 +10,12 @@
 # glm (https://glm.g-truc.net/0.9.9/index.html)
 
 CXX := clang++
-
 CXXFLAGS := -g -ggdb -O2 -Wall -fPIC
-
 PROGRAM := meshview
-
 INC := -I.
-
 LIB := -L./glfw -lglfw3 \
        -lGL -lGLU -lX11 -lXrandr -lXinerama -lXi -lXcursor \
        -lrt -lm -ldl -lpthread
-
 OBJ := main.o \
        glad/glad.o \
        mesh.o \
