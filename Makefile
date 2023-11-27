@@ -1,4 +1,5 @@
 # Tested on AlmaLinux 9.2, clang version 15.0.7
+# Fedora 39, clang 17.0.4
 # Add these subdirectories and files:
 # glad (https://glad.dav1d.de)
 #   glad.c (renamed to glad.cpp)
@@ -8,6 +9,7 @@
 #   glfw3.h
 #   libglfw3.a
 # glm (https://glm.g-truc.net/0.9.9/index.html)
+
 
 CXX := clang++
 CXXFLAGS := -g -ggdb -O2 -Wall -fPIC
