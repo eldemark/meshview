@@ -27,8 +27,8 @@ const float k_range = 5.0f;
 const float k_pi = 3.141592;
 const float k_fov = k_pi / 2.0;
 
-const char* solid_vert = "vertex.glsl";
-const char* solid_frag = "fragment.glsl";
+const char* solid_vert = "shaders/vertex.glsl";
+const char* solid_frag = "shaders/fragment.glsl";
 
 struct object_t
 {
