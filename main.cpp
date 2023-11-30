@@ -23,7 +23,7 @@ const int k_screen_width = 512;
 const float k_near_plane = 0.1f;
 const float k_far_plane = 2000.0f;
 const char* k_screen_title = "OpenGL Scene";
-const float k_range = 5.0f;
+const float k_range = 5.0f; // 5.0
 const float k_pi = 3.141592;
 const float k_fov = k_pi / 2.0;
 
@@ -120,12 +120,9 @@ void render(scene_t& scene)
     // GLuint shader = scene.obj.shader;
     glUseProgram(scene.obj.shader);
 
-    // Set uniform variables in shader.
-    GLuint proj_loc = glGetUniformLocation(scene.obj.shader, "projection");
-    glUniformMatrix4fv(proj_loc, 1, GL_FALSE, &(scene.cam.proj[0][0]));
-
-    GLuint view_loc = glGetUniformLocation(scene.obj.shader, "view");
-    glUniformMatrix4fv(view_loc, 1, GL_FALSE, &(scene.cam.view[0][0]));
+    glm::mat4 mvp = scene.cam.proj * scene.cam.view * scene.obj.model;
+    GLuint mvp_loc = glGetUniformLocation(scene.obj.shader, "MVP");
+    glUniformMatrix4fv(mvp_loc, 1, GL_FALSE, &mvp[0][0]);
 
     GLuint model_loc = glGetUniformLocation(scene.obj.shader, "model");
     glUniformMatrix4fv(model_loc, 1, GL_FALSE, &(scene.obj.model[0][0]));
